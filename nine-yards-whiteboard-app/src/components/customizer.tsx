@@ -36,7 +36,7 @@ const Customizer: Component<{
                 classList={{ active: commonElement().roughness === value }}
                 onclick={() => updateProperty("roughness", value)}
               >
-                <img src={`/svg/roughness/${key}.svg`} alt={key} />
+                <img src={`svg/roughness/${key}.svg`} alt={key} />
               </button>
             }</For>
           </div>
@@ -52,7 +52,7 @@ const Customizer: Component<{
                 classList={{ active: commonElement().rounding === rounding }}
                 onclick={() => updateProperty("rounding", rounding)}
               >
-                <img src={`/svg/rounding/${rounding}.svg`} alt={rounding} />
+                <img src={`svg/rounding/${rounding}.svg`} alt={rounding} />
               </button>
             }</For>
           </div>
@@ -68,7 +68,7 @@ const Customizer: Component<{
                 classList={{ active: commonElement().strokeWidth === value }}
                 onclick={() => updateProperty("strokeWidth", value)}
               >
-                <img src={`/svg/weights/${key}.svg`} alt={key} />
+                <img src={`svg/weights/${key}.svg`} alt={key} />
               </button>
             }</For>
           </div>
@@ -84,7 +84,7 @@ const Customizer: Component<{
                 classList={{ active: commonElement().fillStyle === fill }}
                 onclick={() => updateProperty("fillStyle", fill)}
               >
-                <img src={`/svg/fill/${fill}.svg`} alt={fill} />
+                <img src={`svg/fill/${fill}.svg`} alt={fill} />
               </button>
             }</For>
           </div>
@@ -100,7 +100,7 @@ const Customizer: Component<{
                 classList={{ active: commonElement().strokeType === stroke }}
                 onclick={() => updateProperty("strokeType", stroke)}
               >
-                <img src={`/svg/stroke/${stroke}.svg`} alt={stroke} />
+                <img src={`svg/stroke/${stroke}.svg`} alt={stroke} />
               </button>
             }</For>
           </div>
