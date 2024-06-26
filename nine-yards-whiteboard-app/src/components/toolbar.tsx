@@ -52,7 +52,7 @@ const Toolbar: Component<{ whiteboard: Whiteboard }> = (props) => {
 
   return (
     <section id="toolbar-wrapper">
-      <Show when={isShapeTool() || selectedElements().length > 0}>
+      <Show when={selectedElements().length > 0}>
         <Customizer whiteboard={whiteboard()} selectedElements={selectedElements()} />
       </Show>
 
