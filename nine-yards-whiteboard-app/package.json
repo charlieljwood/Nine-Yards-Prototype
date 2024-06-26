@@ -2,6 +2,7 @@
   "name": "vite-template-solid",
   "version": "0.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -13,10 +14,11 @@
     "solid-devtools": "^0.29.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.11",
-    "vite-plugin-solid": "^2.8.2"
+    "vite-plugin-solid": "^2.8.2",
+    "vite-plugin-static-copy": "^1.0.5"
   },
   "dependencies": {
-    "solid-js": "^1.8.11",
-    "nine-yards-whiteboard-core": "workspace:*"
+    "nine-yards-whiteboard-core": "workspace:*",
+    "solid-js": "^1.8.11"
   }
 }

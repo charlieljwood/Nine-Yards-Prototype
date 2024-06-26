@@ -1,16 +1,19 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
-// import devtools from 'solid-devtools/vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   base: "/Nine-Yards-Prototype/",
   plugins: [
-    /* 
-    Uncomment the following line to enable solid-devtools.
-    For more info see https://github.com/thetarnav/solid-devtools/tree/main/packages/extension#readme
-    */
-    // devtools(),
     solidPlugin(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets/svg/**/*.svg',
+          dest: 'assets'
+        }
+      ]
+    })
   ],
   server: {
     port: 3000,
@@ -18,5 +21,5 @@ export default defineConfig({
   build: {
     target: 'esnext',
   },
-  assetsInclude: ['**/*.svg'],
+  assetsInclude: ['**/*.svg']
 });
