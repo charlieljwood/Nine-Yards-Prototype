@@ -26,7 +26,10 @@ jobs:
         run: pnpm install
 
       - name: Build core library
-        run: cd packages/nine-yards-whiteboard-core && pnpm run build
+        env:
+          BASE_PATH: '/${{ github.event.repository.name }}'
+        run: |
+          cd packages/nine-yards-whiteboard-core && pnpm run build
 
       - name: Refresh Workspace
         run: pnpm install
@@ -40,7 +43,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'nine-yards-whiteboard-app/dist/'
+          path: 'nine-yards-whiteboard-app/dist'
 
   deploy:
     needs: build_site
