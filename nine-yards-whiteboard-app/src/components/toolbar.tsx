@@ -63,7 +63,7 @@ const Toolbar: Component<{ whiteboard: Whiteboard }> = (props) => {
             classList={{ active: selectedTool() === tool }}
             onclick={() => whiteboard().setSelectedTool(tool)}
           >
-            <img src={`/src/assets/svg/tools/${tool}.svg`} alt={tool} />
+            <img src={`/svg/tools/${tool}.svg`} alt={tool} />
           </button>
         }</For>
       </div>

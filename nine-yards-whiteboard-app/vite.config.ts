@@ -6,14 +6,6 @@ export default defineConfig({
   base: "/Nine-Yards-Prototype/",
   plugins: [
     solidPlugin(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'src/assets/svg/**/*.svg',
-          dest: 'assets'
-        }
-      ]
-    })
   ],
   server: {
     port: 3000,
