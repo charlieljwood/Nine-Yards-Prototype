@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@font-face {
+  font-family: 'info-story';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/info_story.ttf") format('opentype');
+}
+
+:root {
+  --doodleboard-border-radius: 1em;
+  --doodleboard-margin: 1em;
+  --doodleboard-box-shadow: 3px 3px 5px #aaaaaa;
+  --doodleboard-padding: 0.3em;
+
+  --doodleboard-accent-colour: #aabbff;
+  --doodleboard-primary-colour: #1f1f1f;
+  --doodleboard-hint-colour: #aabbffaa;
+  --doodleboard-base-colour: #fafaff;
+}
+
+html,
+body {
+  font-family: 'info-story';
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.doodleboard-card {
+  z-index: 10;
+  background-color: var(--doodleboard-base-colour);
+  padding: var(--doodleboard-padding);
+  border-radius: var(--doodleboard-border-radius);
+  box-shadow: var(--doodleboard-box-shadow);
+}
+
+.doodleboard-button {
+  width: 3em;
+  height: 3em;
+  border-radius: var(--doodleboard-border-radius);
+  border-width: 0;
+  background: none;
+}
+
+.doodleboard-button:hover {
+  background-color: var(--doodleboard-hint-colour);
+}
+
+.doodleboard-button:disabled {
+  background-color: var(--doodleboard-accent-colour);
+}
+
+.doodleboard-button:active {
+  border-style: solid;
+  border-color: var(--doodleboard-hint-colour);
+}
+
+.absolute-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#customizer {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  bottom: 10px;
+}

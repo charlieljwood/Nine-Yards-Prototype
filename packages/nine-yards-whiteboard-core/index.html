@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doodleboard</title>
+</head>
+
+<body>
+  <div id="app">
+    <canvas id="canvas">This browser does not support canvas rendering</canvas>
+  </div>
+
+  <script type=" module" src="/src/index.ts">
+  </script>
+
+  <script type="module">
+    import {Whiteboard} from "./src/index.ts";
+    import {FIXTURE_DATA} from "./index.ts";
+
+    function loadStorage(key, fallback) {
+      const stored = localStorage.getItem(key);
+
+      if (!stored) {
+        return fallback;
+      }
+
+      return JSON.parse(stored);
+    }
+
+    const canvas = document.getElementById("canvas");
+    const elements = loadStorage("doodleboard-state", FIXTURE_DATA);
+    const viewport = loadStorage("doodleboard-viewport", {zoom: 2, scrollX: 0, scrollY: 0});
+
+    const whiteboard = Whiteboard.on(canvas, {
+      resizeTo: window,
+      elements,
+      viewport,
+    });
+
+    whiteboard.on("element:mutation", ({state}) => {
+      localStorage.setItem("doodleboard-state", JSON.stringify(state));
+    });
+    whiteboard.on("viewport:mutation", ({state}) => {
+      localStorage.setItem("doodleboard-viewport", JSON.stringify(state));
+    });
+
+  </script>
+</body>
+
+</html>
