@@ -541,11 +541,11 @@ export class Whiteboard<
       drawElement(this, event, this._selectedTool);
     }
 
-    if (this.handleElementSelection(event)) {
+    if (this.tryHandleElementUpdate(event)) {
       return;
     }
-
-    if (this.tryHandleElementUpdate(event)) {
+    
+    if (this.handleElementSelection(event)) {
       return;
     }
 
